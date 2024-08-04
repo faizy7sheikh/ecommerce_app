@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/screens/Home/home_screen.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class _FavoriteState extends State<Favorite> {
         leading: IconButton(
                   padding: EdgeInsets.all(15),
                   onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                 }, icon: Icon(Icons.arrow_back,color: Colors.black,)),
         title: const Text(
           "Favorite",

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import 'filter_model.dart';
+
 class MySearchBar extends StatelessWidget {
   const MySearchBar({Key? key}) : super(key: key);
 
@@ -39,10 +41,19 @@ class MySearchBar extends StatelessWidget {
               splashRadius: 10,
               focusColor: kcontentColor,
               onPressed: () {
-              
+              showFilterModal(context);
             }, icon: Icon(Icons.tune,color: Colors.grey,))
         ],
       ),
     );
+  }
+  
+  void showFilterModal(BuildContext context) {
+    showModalBottomSheet(
+    context: context,
+    builder: (BuildContext context) {
+      return FilterModal();
+    },
+  );
   }
 }

@@ -17,7 +17,8 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      bottomSheet: Checkout(),
+      bottomNavigationBar:Checkout() ,
+      // bottomSheet: Checkout(),
       backgroundColor: kcontentColor,
       body: SafeArea(
         child: Column(

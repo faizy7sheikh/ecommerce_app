@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/screens/Home/Widgets/category.dart';
 import 'package:ecommerce_app/screens/Home/Widgets/home_app_bar.dart';
 import 'package:ecommerce_app/screens/Home/Widgets/image_slider.dart';
+import 'package:ecommerce_app/screens/Home/Widgets/my_drawer.dart';
 import 'package:ecommerce_app/screens/Home/Widgets/product_cart.dart';
 import 'package:ecommerce_app/screens/Home/Widgets/search_bar.dart';
 import 'package:ecommerce_app/utils/colors.dart';
@@ -22,7 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        backgroundColor: Colors.red,
+        backgroundColor: kcontentColor,
+        child: MyDrawer(),
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -32,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
             //  for cusotm app bar
-              CustomAppBar(openDrawer: () => _scaffoldKey.currentState?.openDrawer()),
+              CustomAppBar(),
               SizedBox(height: 20,),
               //  for search bar
               MySearchBar(),
@@ -46,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
               // category section
               SizedBox(height: 20,),
               Categories(),
-
+      
               // product
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text("See all",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.black54),)
                 ],
               ),
-
+      
               // product list 
               GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 0.78,
               crossAxisSpacing: 20,
